@@ -1,0 +1,16 @@
+body {
+  background-color: lightblue;
+}
+p.coloreado {
+  border-style: solid;
+  border-width: 1px;
+  margin: auto;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  text-align: center;
+}
+.cambiarColor {
+  /*background-color: white;*/
+}
+/*rgb(255,0,0)*/

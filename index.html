@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <Head>
+  	<meta charset="ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="JQuery/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script>
+      $(document).ready(function(){
+        <!--$("a").hide();-->
+        $('#cuadradoColoreado').bind('click',function(){
+          <!--$('p').addClass('cambiarColor');-->
+          var r = 1 + Math.floor(Math.random() * 255);
+          var g = 1 + Math.floor(Math.random() * 255);
+          var b = 1 + Math.floor(Math.random() * 255);
+          var color = 'rgb(' + r + ',' + g + ',' + b + ')';
+          <!--alert(color);-->
+          $('#cuadradoColoreado').css('background-color', color);
+          event.stopPropagation();
+        });
+
+        $(document).bind('click',function(event){
+          var ejeX = event.pageX;
+          var ejeY = event.pageY;
+
+          $('#cuadradoColoreado').animate({
+              left: ejeX - $('#cuadradoColoreado').width()/2,
+              top: ejeY- $('#cuadradoColoreado').height()/2
+          });
+        });
+      });
+    </script>
+  </Head>
+  <body>
+    <div>
+      <h1>Pruebas HTML5 + JQuery + CSS3</h1>
+      <h3>Haz click en cualquier parte del cuerpo de la p&aacute;gina</h3>
+    </div>
+
+    <p class="coloreado" id="cuadradoColoreado">
+      Click aqu&iacute; para cambiar el color
+    </p>
+  </body>
+</html>
